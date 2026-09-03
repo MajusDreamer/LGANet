@@ -11,7 +11,7 @@ This project mainly targets high-resolution remote sensing image semantic segmen
 * **LoveDA Dataset**: A challenging land-cover dataset containing high-resolution (0.3 m) imagery gathered from both urban and rural areas across three cities (Nanjing, Changzhou, and Wuhan). It encompasses 7 primary land-cover categories: building, road, water, barren, forest, agriculture, and background. Featuring distinct domain shifts between urban and rural scenes, it is widely utilized for evaluating model robustness, multi-scale feature representation, and generalizability in diverse environments.
 
 ## 3. Environment Installation
-Create and configure the Python environment using Linux Terminal:
+Create and configure the PyTorch environment:
 
 ```bash
 # Create and activate conda environment
