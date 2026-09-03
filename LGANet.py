@@ -101,13 +101,6 @@ class DualAttention(nn.Module):
     def forward(self, x, res):
         x = self.blockUp(x)
         res = self.pre_conv(res)
-        gate_weight = self.gate(torch.cat([x, res], 1))
-        x = gate_weight * x + (1 - gate_weight) * res
-        x = self.post_conv(x)
-        shortcut = self.shortcut(x)
-        pa = self.pa(x) * x
-        avg_out,max_out = self.channel_attention(x)
-        x =  pa + avg_out + max_out
         x = self.proj(x) + shortcut
         x = self.act(x)
 
