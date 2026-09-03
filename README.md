@@ -15,11 +15,11 @@ Create and configure the PyTorch environment:
 
 ```bash
 # Create and activate conda environment
-conda create -n airs python=3.8
-conda activate airs
+conda create -n lganet python=3.8
+conda activate lganet
 
 # Install PyTorch with CUDA 11.8 support
 pip3 install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
 
 # Install project dependencies
-pip install -r GeoSeg/requirements.txt
+pip install -r requirements.txt
