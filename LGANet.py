@@ -120,7 +120,7 @@ class FeatureRefinementHead(nn.Module):
         self.pre_conv = Conv(in_channels, decode_channels, kernel_size=1)
         self.post_conv = ConvBNReLU(128, decode_channels, kernel_size=3)
         self.blockUp = nn.Sequential(
-            # 输入：1x4x4 -> 输出：64x8x8
+           
             nn.ConvTranspose2d(
                 in_channels=64,
                 out_channels=64,
