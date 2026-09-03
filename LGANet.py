@@ -176,7 +176,7 @@ class Decoder(nn.Module):
 
             return x
         else:
-            x = self.pre_conv(res4) # 调整通道
+            x = self.pre_conv(res4) 
             x = self.p3(x, res3)
             x = self.p2(x, res2)
             x = self.p1(x, res1)
