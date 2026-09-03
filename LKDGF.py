@@ -211,12 +211,11 @@ class LKD_FusionFeature(nn.Module):
         fused_features = []
 
         for i, (res_feat, ds_feat) in enumerate(zip(res_features, ds_features)):
-            # 确保特征图尺寸匹配
+            
             if res_feat.shape[2:] != ds_feat.shape[2:]:
-                # print("输出特征图不匹配")
+                
                 ds_feat = F.adaptive_avg_pool2d(ds_feat, res_feat.shape[2:])
 
-            # 使用sigmoid将权重限制在0到1之间，然后乘以2，得到0到2之间的权重
             weights = torch.sigmoid(self.weights[i]) * 2
             weight_a = weights[:, 0].view(1, -1, 1, 1)
             weight_b = weights[:, 1].view(1, -1, 1, 1)
